@@ -1,0 +1,14 @@
+---
+- hosts: 172.16.0.217
+  become: yes
+  tasks:
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: present
+
+  - name: Start Apache2
+    service:
+      name: apache2
+      state: started
+      enabled: yes
